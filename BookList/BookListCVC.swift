@@ -8,6 +8,9 @@
 
 import UIKit
 
-class ListBookCVC: UICollectionViewCell {
+class BookListCVC: UICollectionViewCell {
+    
+    @IBOutlet weak var bookCoverImage: UIImageView!
     
 }
+

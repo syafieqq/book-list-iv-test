@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Material
 
 @IBDesignable
 class DesignableUITextField: UITextField {
@@ -113,7 +112,7 @@ class DesignableUITextField2: UITextField {
             // "Template Image".
             
             
-            imageView.tintColor = Color.green.base
+            imageView.tintColor = UIColor.green
             leftView = imageView
         } else {
             leftViewMode = UITextField.ViewMode.never

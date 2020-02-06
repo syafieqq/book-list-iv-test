@@ -1,24 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fck-Gl-bP0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List Book-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BookListVC" customModule="BookList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImg" translatesAutoresizingMaskIntoConstraints="NO" id="eJk-6c-5aj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XP8-1K-e0L">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B8q-we-Ze3">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellbook" id="OiD-Pp-Wjn" customClass="BookListCVC" customModule="BookList" customModuleProvider="target">
+                                        <rect key="frame" x="100.5" y="0.0" width="213" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BpL-oK-J7a">
+                                            <rect key="frame" x="0.0" y="0.0" width="213" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MT2-Gc-9t6">
+                                                    <rect key="frame" x="0.0" y="245" width="213" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="9Ii-vA-CKg"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-m9-8ux">
+                                                    <rect key="frame" x="12" y="12" width="189" height="221"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MT2-Gc-9t6" firstAttribute="top" secondItem="1ea-m9-8ux" secondAttribute="bottom" constant="12" id="J9w-Z9-3ew"/>
+                                                <constraint firstAttribute="trailing" secondItem="MT2-Gc-9t6" secondAttribute="trailing" id="QhQ-gS-Fin"/>
+                                                <constraint firstItem="1ea-m9-8ux" firstAttribute="top" secondItem="BpL-oK-J7a" secondAttribute="top" constant="12" id="VIS-GA-Jfn"/>
+                                                <constraint firstAttribute="bottom" secondItem="MT2-Gc-9t6" secondAttribute="bottom" id="Yyc-Yv-fbH"/>
+                                                <constraint firstItem="1ea-m9-8ux" firstAttribute="leading" secondItem="BpL-oK-J7a" secondAttribute="leading" constant="12" id="fhP-Aa-Lbf"/>
+                                                <constraint firstItem="MT2-Gc-9t6" firstAttribute="leading" secondItem="BpL-oK-J7a" secondAttribute="leading" id="x8O-pz-6wV"/>
+                                                <constraint firstAttribute="trailing" secondItem="1ea-m9-8ux" secondAttribute="trailing" constant="12" id="zfy-Hc-WJi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="213" height="270"/>
+                                        <connections>
+                                            <outlet property="bookCoverImage" destination="1ea-m9-8ux" id="q4G-gb-TAW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="EQ8-2G-9Hp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="B2h-LN-lif"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XP8-1K-e0L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Sv-do-Wft"/>
+                            <constraint firstItem="eJk-6c-5aj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BPp-ly-uuN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XP8-1K-e0L" secondAttribute="bottom" id="Con-RF-9Rg"/>
+                            <constraint firstItem="XP8-1K-e0L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JOg-fQ-60M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XP8-1K-e0L" secondAttribute="trailing" id="Oom-ht-RI7"/>
+                            <constraint firstAttribute="bottom" secondItem="eJk-6c-5aj" secondAttribute="bottom" id="SIn-79-kLV"/>
+                            <constraint firstItem="eJk-6c-5aj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aUi-fU-Enm"/>
+                            <constraint firstAttribute="trailing" secondItem="eJk-6c-5aj" secondAttribute="trailing" id="oQd-It-JtT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="List Book" id="xDq-7G-nxD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="XP8-1K-e0L" id="jtJ-gc-RhN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Book InfoVC-->
+        <scene sceneID="bLF-Yo-wwy">
+            <objects>
+                <viewController storyboardIdentifier="bookinfo" id="Rmr-ea-fhZ" customClass="BookInfoVC" customModule="BookList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="foi-o5-VNy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fji-kt-Nk8" customClass="CardView" customModule="BookList" customModuleProvider="target">
+                                <rect key="frame" x="24" y="76" width="366" height="780"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Miq-lc-o9Y">
+                                        <rect key="frame" x="12" y="16" width="183" height="249"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Miq-lc-o9Y" secondAttribute="height" multiplier="191:260" id="GPw-Fp-gWR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOV-HR-2xX">
+                                        <rect key="frame" x="203" y="24" width="155" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpj-u9-Mw6" customClass="CustomButton" customModule="BookList" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="305" width="342" height="137"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Read">
+                                            <color key="titleColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="readButtonDidTapped:" destination="Rmr-ea-fhZ" eventType="touchUpInside" id="T3s-Ds-8Oa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfS-eX-Wf7" customClass="CustomButton" customModule="BookList" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="458" width="342" height="137"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="writeButtonDidTapped:" destination="Rmr-ea-fhZ" eventType="touchUpInside" id="4Z8-Uh-JqA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-g0-A0V" customClass="CustomButton" customModule="BookList" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="611" width="342" height="137"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteButtonDidTapped:" destination="Rmr-ea-fhZ" eventType="touchUpInside" id="qmJ-BP-jzy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gfS-eX-Wf7" firstAttribute="top" secondItem="Gpj-u9-Mw6" secondAttribute="bottom" constant="16" id="4iW-tW-Je0"/>
+                                    <constraint firstItem="Gpj-u9-Mw6" firstAttribute="leading" secondItem="Fji-kt-Nk8" secondAttribute="leading" constant="12" id="CLa-cu-qFK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gpj-u9-Mw6" secondAttribute="trailing" constant="12" id="DJK-cb-Npf"/>
+                                    <constraint firstAttribute="trailing" secondItem="gfS-eX-Wf7" secondAttribute="trailing" constant="12" id="Fc9-U2-0k2"/>
+                                    <constraint firstAttribute="trailing" secondItem="eOV-HR-2xX" secondAttribute="trailing" constant="8" id="MZE-KF-NJh"/>
+                                    <constraint firstItem="bfI-g0-A0V" firstAttribute="height" secondItem="Gpj-u9-Mw6" secondAttribute="height" id="NQZ-m4-CFO"/>
+                                    <constraint firstItem="bfI-g0-A0V" firstAttribute="top" secondItem="gfS-eX-Wf7" secondAttribute="bottom" constant="16" id="OeL-kC-yyB"/>
+                                    <constraint firstItem="gfS-eX-Wf7" firstAttribute="height" secondItem="Gpj-u9-Mw6" secondAttribute="height" id="Sqa-lg-ZQO"/>
+                                    <constraint firstItem="Miq-lc-o9Y" firstAttribute="leading" secondItem="Fji-kt-Nk8" secondAttribute="leading" constant="12" id="UNr-s2-grL"/>
+                                    <constraint firstItem="gfS-eX-Wf7" firstAttribute="leading" secondItem="Fji-kt-Nk8" secondAttribute="leading" constant="12" id="ZIg-P6-6zx"/>
+                                    <constraint firstItem="Miq-lc-o9Y" firstAttribute="width" secondItem="Fji-kt-Nk8" secondAttribute="width" multiplier="0.5" id="g4w-jy-BMn"/>
+                                    <constraint firstItem="Miq-lc-o9Y" firstAttribute="top" secondItem="Fji-kt-Nk8" secondAttribute="top" constant="16" id="hPQ-KZ-3yz"/>
+                                    <constraint firstItem="eOV-HR-2xX" firstAttribute="top" secondItem="Miq-lc-o9Y" secondAttribute="top" constant="8" id="mkb-CW-QgO"/>
+                                    <constraint firstItem="bfI-g0-A0V" firstAttribute="leading" secondItem="Fji-kt-Nk8" secondAttribute="leading" constant="12" id="oHL-rs-QIN"/>
+                                    <constraint firstItem="Gpj-u9-Mw6" firstAttribute="top" secondItem="Miq-lc-o9Y" secondAttribute="bottom" constant="40" id="oxY-uB-Snp"/>
+                                    <constraint firstAttribute="trailing" secondItem="bfI-g0-A0V" secondAttribute="trailing" constant="12" id="veo-8o-vxe"/>
+                                    <constraint firstItem="eOV-HR-2xX" firstAttribute="leading" secondItem="Miq-lc-o9Y" secondAttribute="trailing" constant="8" id="xSe-ZJ-HSi"/>
+                                    <constraint firstAttribute="bottom" secondItem="bfI-g0-A0V" secondAttribute="bottom" constant="32" id="xy9-Xm-LnD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fji-kt-Nk8" firstAttribute="top" secondItem="z4U-0p-0TG" secondAttribute="top" constant="32" id="KEW-LN-eEI"/>
+                            <constraint firstItem="Fji-kt-Nk8" firstAttribute="trailing" secondItem="z4U-0p-0TG" secondAttribute="trailing" constant="-24" id="aS7-Ik-IS1"/>
+                            <constraint firstItem="Fji-kt-Nk8" firstAttribute="leading" secondItem="z4U-0p-0TG" secondAttribute="leading" constant="24" id="jNB-o3-yBf"/>
+                            <constraint firstAttribute="bottom" secondItem="Fji-kt-Nk8" secondAttribute="bottom" constant="40" id="lQe-zn-05E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z4U-0p-0TG"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookCoverImage" destination="Miq-lc-o9Y" id="WtS-vF-8bg"/>
+                        <outlet property="bookTitle" destination="eOV-HR-2xX" id="Riy-69-Yhs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYM-HO-9Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794.2028985507247" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BKm-1e-X9o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fck-Gl-bP0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="s9P-7H-XJ3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.31764705879999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MFS-FY-6s0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIT-GO-leP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundImg" width="640" height="960"/>
+    </resources>
 </document>
